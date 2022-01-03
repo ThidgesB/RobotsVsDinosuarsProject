@@ -10,9 +10,7 @@ class Robot:
 
     def create_robot(self, name, weapon_name, weapon_attack_power):
         self.name = name
-        self.weapon = {
-            weapon_name: weapon_attack_power
-        }
+        self.weapon = weapon_name, weapon_attack_power
 
 
 
