@@ -1,17 +1,12 @@
 from weapon import Weapon
-chosen_weapon = Weapon()
+
 
 
 class Robot:
-    def __init__(self):
-        self.name = ''
-        self.health = 100
-        self.weapon = ()
-
-    def create_robot(self, name, weapon_name, weapon_attack_power):
+    def __init__(self, name):
         self.name = name
-        self.weapon = weapon_name, weapon_attack_power
-
+        self.health = 100
+        self.weapon = Weapon()
 
 
     def attack(self, dinosaur):

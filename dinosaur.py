@@ -5,8 +5,8 @@
 class Dinosaur:
     def __init__(self, name, attack_power):
         self.name = name
+        self.health = 100
         self.dino_attack_power = attack_power
-        self.health = 0
 
-    def attack(self, robot):
+    def attack(self, robot): # robot_a fight watever dino we pass in when we call the function so example self.fleet.robot_a.attack(dino_a)
         pass

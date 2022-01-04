@@ -1,8 +1,10 @@
-from robot import Robot
-from dinosaur import Dinosaur
+from battlefield import Battlefield
+battlefield = Battlefield()
+battlefield.run_game()
 
-robot_sheet = Robot()
 
-robot_a = robot_sheet.create_robot('CL4P-TP', 'Damcocles', 25)
-robot_b = robot_sheet.create_robot('Daemon', "Adjustable Electron Ray", 25)
-robot_c = robot_sheet.create_robot('Nexus-6', 'Multi-Shot Antimatter Rifle', 15)
+# TO DO
+# finish the herd
+# call herd on battlefield and step through in debugger to watch it being made
+# start planning your battle logic 
+# code battle logic 
