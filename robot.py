@@ -4,7 +4,7 @@ from weapon import Weapon
 class Robot:
     def __init__(self, name):
         self.name = name
-        self.health = 100
+        self.health = 25
         self.weapon = Weapon()
 
 
@@ -17,4 +17,4 @@ class Robot:
             print(f'{dino.name} has been defeated!')
             if dino.health < 0:
                 print('OVERKILL')
-                        # think about adding an if statment "if" dino heath is 0 or less than he can be removed from the list in this step.
+                        # think about adding an if statment "if" dino health is 0 or less than he can be removed from the list in this step.
