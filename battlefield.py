@@ -1,11 +1,11 @@
 from herd import Herd
 from fleet import Fleet
 
+
 class Battlefield:
     def __init__(self):
         self.robot_fleet = Fleet()
         self.dinosaur_herd = Herd()
-        pass
 
     def run_game(self): # can call this to run our other methods weve made
         self.display_welcome()
@@ -15,6 +15,17 @@ class Battlefield:
     def display_welcome(self):
         print('Welcome to Jurassic Arena')
         pass
+
+    def input_check(self, message):
+        while True:
+            try:
+                user_input = int(input(message))
+            except ValueError:
+                print("Please enter a number")
+                continue
+            else:
+                return user_input
+
 
     def battle(self): # this may call dino_turn and robo_turn could even call opponent_options below 
         battle_over = False          #boolean flag
@@ -36,22 +47,50 @@ class Battlefield:
         
     def dino_turn(self): # might include show_dino_opponent_options also remember you have attack logic in class
         self.show_dino_opponent_options()
-        dino_index = int(input('Select Dinosaur to Attack with'))
+        input_flag = False
+        while input_flag == False:
+            dino_index = self.input_check('Which Dinosaur will attack? ')
+            if dino_index != 0 and dino_index != 1 and dino_index != 2:
+                print('Incorrect input')
+                input_flag = False
+            else:
+                input_flag = True
         self.show_robo_opponent_options()
-        robot_index = int(input('Select Robot to Attack'))
+        input_flag = False
+        while input_flag == False:
+            robot_index = self.input_check('Choose a target ')
+            if robot_index != 0 and robot_index != 1 and robot_index != 2:
+                print('Incorrect input')
+                input_flag = False
+            else:
+                input_flag = True
         self.dinosaur_herd.dinos[dino_index].attack(self.robot_fleet.robots[robot_index], self.robot_fleet.robots)
         
 
     def robo_turn(self): # might include show_robo_opponent_options  also remember you have attack logic in class
         self.show_robo_opponent_options()
-        robot_index = int(input('Select robot to attack with'))
+        input_flag = False
+        while input_flag == False:
+            robot_index = self.input_check('Which Robot will attack? ')
+            if robot_index != 0 and robot_index != 1 and robot_index != 2:
+                print('Incorrect input')
+                input_flag = False
+            else:
+                input_flag = True
         self.show_dino_opponent_options()
-        dino_index = int(input('Select dinosaur to attack'))
-        self.robot_fleet.robots[robot_index].attack(self.dinosaur_herd.dinos[dino_index], self.dinosaur_herd.dinos)  #<--,(self.herd.dinos)
+        input_flag = False
+        while input_flag == False:
+            dino_index = self.input_check('Choose a target ')
+            if dino_index != 0 and dino_index != 1 and dino_index != 2:
+                print('Incorrect input')
+                input_flag = False
+            else:
+                input_flag = True
+        self.robot_fleet.robots[robot_index].attack(self.dinosaur_herd.dinos[dino_index], self.dinosaur_herd.dinos)  #The robots turn attacking the dinosaurs.
         
 
     def show_dino_opponent_options(self):
-        print('Current Dinosaur Herd (Enemies)')
+        print('Current Dinosaur Herd')
         temp = 0
         for dino in self.dinosaur_herd.dinos:
             print(f'Press {temp} to select {dino.name} ({dino.health} HP)')
