@@ -50,7 +50,7 @@ class Battlefield:
         input_flag = False
         while input_flag == False:
             dino_index = self.input_check('Which Dinosaur will attack? ')
-            if dino_index != 0 and dino_index != 1 and dino_index != 2:
+            if dino_index not in range(len(self.dinosaur_herd.dinos)):#This was the magic key to my user_input for robots/dinos error, if attempted input was removed from list
                 print('Incorrect input')
                 input_flag = False
             else:
@@ -59,7 +59,7 @@ class Battlefield:
         input_flag = False
         while input_flag == False:
             robot_index = self.input_check('Choose a target ')
-            if robot_index != 0 and robot_index != 1 and robot_index != 2:
+            if robot_index not in range(len(self.robot_fleet.robots)):
                 print('Incorrect input')
                 input_flag = False
             else:
@@ -72,7 +72,7 @@ class Battlefield:
         input_flag = False
         while input_flag == False:
             robot_index = self.input_check('Which Robot will attack? ')
-            if robot_index != 0 and robot_index != 1 and robot_index != 2:
+            if robot_index not in range(len(self.robot_fleet.robots)):
                 print('Incorrect input')
                 input_flag = False
             else:
@@ -81,7 +81,7 @@ class Battlefield:
         input_flag = False
         while input_flag == False:
             dino_index = self.input_check('Choose a target ')
-            if dino_index != 0 and dino_index != 1 and dino_index != 2:
+            if dino_index not in range(len(self.dinosaur_herd.dinos)):
                 print('Incorrect input')
                 input_flag = False
             else:
