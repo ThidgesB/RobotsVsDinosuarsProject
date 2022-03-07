@@ -1,0 +1,13 @@
+Robots get first turn
+Player chooses which robot to attack with
+Player chooses which dinosaur gets attacked
+Take those choices
+Subtract robot weapon attack power from dino health
+If Dinosaur has 0 or less health, remove that dinosaur from herd list
+Dinosaurs get a turn
+Player chooses which dinosaur to attack with
+Player chooses which robot to be attacked
+Subtract Dino attack power from robot health
+If Robot has 0 health or less, remove that robot from the list
+While both sides still have Fighters, continue battle logic
+When one side's list is empty, the other side is the winner.
